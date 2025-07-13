@@ -1,6 +1,7 @@
 "use client";
 import React from "react"
 import Image from "next/image";
+import Link from "next/link";
 import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
@@ -31,28 +32,39 @@ const HeroSection = () => {
                             />
                     </h1>
                     <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    A versatile Software Engineer with proven expertise in both full stack and mobile development. I specialize in building, testing, and deploying scalable applications from end-to-end, delivering seamless user experiences across web and mobile platforms.
                     </p>
                     <div>
+                        <Link
+                        href="/#contact"
+                        className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+                        ></Link>
                         <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-white hover:bg-slate-200 text-white">
-                            Hire Me
+                            <Link
+                            href="/#contact"
+                            >
+                                Hire Me
+                            </Link>
                         </button>
                         <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
-                            <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                                Download CV
-                            </span>
+                            <Link
+                            href="/my-cv.docx.pdf"
+                            >
+                                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                                    Download CV
+                                </span>
+                            </Link>
                         </button>
                     </div>
                 </div>
-                <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-                    <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative"></div>
-                    {/* <Image
-                        src="/images/profile-picture.jpeg"
-                        alt="profile picture"
-                        className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        width={300}
-                        height={300}
-                    /> */}
+                <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] ml-20 relative">
+                    <Image
+                    src="/images/HeroSection.png"
+                    alt="hero image"
+                    className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ml-4"
+                    width={300}
+                    height={300}
+                    />
                 </div>
             </div>
         </section>

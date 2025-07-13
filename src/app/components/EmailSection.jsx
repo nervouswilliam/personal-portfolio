@@ -1,7 +1,7 @@
 "use client"
 import React , {useState} from 'react'
 import GithubLogo from "../../../public/images/GithubLogo.png"
-import linkedinLogo from "../../../public/images/linkedinLogo.jpg"
+import linkedinLogo from "../../../public/images/LinkedinLogo.png"
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -47,10 +47,19 @@ const EmailSection = () => {
             </p>
             <div className='socials flex flex-row gap-2'>
                 <Link href="github.com">
-                    <Image src={GithubLogo} alt='Github Logo'/>
+                    <Image 
+                    src={GithubLogo} 
+                    alt='Github Logo'
+                    width={50}
+                    height={50}/>
                 </Link>
                 <Link href="linkedin.com">
-                    <Image src={linkedinLogo} alt='Linkedin Logo'/>
+                    <Image 
+                    src={linkedinLogo} 
+                    alt='Linkedin Logo'
+                    width={100}
+                    height={100}
+                    className='absolute top-50'/>
                 </Link>
             </div>
         </div>
