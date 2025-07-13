@@ -45,7 +45,7 @@ const EmailSection = () => {
                 open. Whether you have a question or just want to say hi, I&apos;ll
                 try my best to get back to you!
             </p>
-            <div className='socials flex flex-row gap-2'>
+            <div className='socials flex flex-row gap-2 items-center'>
                 <Link href="https://github.com/nervouswilliam">
                     <Image 
                     src={GithubLogo} 
@@ -58,8 +58,7 @@ const EmailSection = () => {
                     src={linkedinLogo} 
                     alt='Linkedin Logo'
                     width={100}
-                    height={100}
-                    className='absolute top-50'/>
+                    height={100}/>
                 </Link>
             </div>
         </div>
