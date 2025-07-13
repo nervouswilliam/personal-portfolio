@@ -24,7 +24,7 @@ const TAB_DATA = [
         id: "education",
         content: (
             <ul className="list-disc pl-2">
-                <li>Bina Nusantara University, Indonesia</li>
+                <li>Bina Nusantara University, Indonesia |3.67/4|</li>
             </ul>
         ),
     },
@@ -33,8 +33,8 @@ const TAB_DATA = [
         id: "certifications",
         content: (
             <ul className="list-disc pl-2">
-                <li>AWS Cloud Practitioner</li>
-                <li>Google Professional Cloud Developer</li>
+                <li>Hackerrank Python</li>
+                <li>IELTS Academic</li>
             </ul>
         ),
     },
