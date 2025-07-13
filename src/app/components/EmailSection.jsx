@@ -7,9 +7,11 @@ import Image from 'next/image'
 
 const EmailSection = () => {
     const [emailSubmitted, setEmailSubmitted] = useState(false)
+    const [isLoading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         const data = {
             email: e.target.email.value,
             subject: e.target.subject.value,
@@ -30,6 +32,7 @@ const EmailSection = () => {
         if(response.status === 200){ 
             console.log('message sent')
             setEmailSubmitted(true);
+            setLoading(false)
         }
     }
   return (
@@ -107,8 +110,32 @@ const EmailSection = () => {
                 </div>
                 <button
                 type='submit'
-                className='bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'>
-                    Send Message
+                className='bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'
+                disabled={isLoading}>
+                    {isLoading ? (
+                        <svg
+                        className='animate-spin h-5 w-5 text-white'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        >
+                            <circle
+                            className='opacity-25'
+                            cx='12'
+                            cy='12'
+                            r='10'
+                            stroke='currentColor'
+                            strokeWidth='4'
+                            />
+                            <path
+                            className='opacity-75'
+                            fill='currentColor'
+                            d='M4 12a8 8 0 018-8v8H4z'
+                            />
+                        </svg>
+                    ) : (
+                        'Send Message'
+                    )}
                 </button>
                 {
                     emailSubmitted && (
