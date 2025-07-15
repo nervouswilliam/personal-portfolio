@@ -19,34 +19,40 @@ export async function POST(req, res) {
     <p>Thank you for reaching out. I’ll get back to you soon.</p> 
     <p>Best regards,<br/>Jeremiah William Sebastian</p>
     `;
+
+    const personal = `
+    <h1>New Message !</h1>
+    <p>
+        You have a new message from ${email}:
+        <span style="color: #8b5cf6; font-style: italic; font-weight: 600;">
+        "${message}"
+        </span>
+    </p>
+    `;
     try {
         const { data, error } = await resend.emails.send({
         from: fromEmail,
-        to: [fromEmail, email, myEmail],
+        to: [fromEmail, email],
         subject: subject,
         html:html,
-        // react: (
-        //     <>
-        //         <h1>{subject}</h1>
-        //         <p>
-        //             Thanks for reaching out through my portfolio website. I have seen your message:
-        //             <span style="color: #8b5cf6; font-style: italic; font-weight: 600;">
-        //                 "{{message}}"
-        //             </span>
-        //         </p>
-
-        //         <p>Thank you for reaching out. I&apos;ll get back to you soon.</p> 
-
-        //         <p>Best regards,<br/>Jeremiah William Sebastian</p>
-        //     </>
-        //     ),
         });
 
         if (error) {
             return NextResponse.json({ error }, { status: 500 });
         }
 
-        return NextResponse.json(data);
+        const { personalData, personalError } = await resend.emails.send({
+            from: fromEmail,
+            to: myEmail,
+            subject: `New Message from ${email}`,
+            html:personal,
+            });
+        
+        if(personalError){
+            return NextResponse.json({ personalError }, { status: 500 });ß
+        }
+
+        return NextResponse.json({data, personalData});
     } catch (error) {
         return NextResponse.json({ error }, { status: 500 });
     }
