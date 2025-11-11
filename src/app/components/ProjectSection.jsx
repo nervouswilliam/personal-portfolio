@@ -17,12 +17,12 @@ const projectsData = [
     },
     {
       id: 2,
-      title: "Vorskin",
-      description: "This project is an online e commerce website specifically to help sell beauty products online. The language used is HTML and CSS for the front end and a little bit of Java Script for the backend.",
-      image: "/images/projects/Vorskin.png",
+      title: "Wisely",
+      description: "Wisely unifies your warehouse management system (WMS) and point of sale (POS) into a single, efficient platform, helping you keep track of every unit and every transaction.",
+      image: "/images/projects/wisely.png",
       tag: ["All", "Web"],
-      gitUrl: "https://github.com/nervouswilliam/Vorskin",
-      previewUrl: "/",
+      gitUrl: "https://github.com/nervouswilliam/WISE",
+      previewUrl: "https://www.wisely.id",
     },
     {
       id: 3,
