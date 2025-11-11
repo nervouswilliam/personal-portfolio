@@ -24,7 +24,8 @@ const TAB_DATA = [
         id: "education",
         content: (
             <ul className="list-disc pl-2">
-                <li>Bina Nusantara University, Indonesia |3.67/4|</li>
+                <li>Bina Nusantara University (Bachelor, Computer Science), Indonesia |3.67/4|</li>
+                <li>Singapore Management University (Master, Data Science and Analytics), Singapore </li>
             </ul>
         ),
     },
